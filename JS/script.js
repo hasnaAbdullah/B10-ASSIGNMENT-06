@@ -1,6 +1,8 @@
 //task 01: show category in html
 //task 02: show all pets in html by default
 
+let allPets = [];
+
 //task 01
 async function getCatergory() {
   const res = await fetch(
@@ -42,13 +44,54 @@ function selectCatergory(categoryContainer) {
       if (event.target.tagName === "DIV") {
         event.target.classList.add("border-teal-600");
         event.target.classList.add("bg-teal-100");
+        showCurrentSelectedPets(event.target.innerText);
+        // console.log(event.target.innerText);
       } else {
         const parentElm = event.target.parentElement;
         parentElm.classList.add("border-teal-600");
         parentElm.classList.add("bg-teal-100");
+        // console.log(parentElm.innerText);
+        showCurrentSelectedPets(parentElm.innerText);
       }
     });
   }
+}
+function showCurrentSelectedPets(petName) {
+  const currentSelectedPets = [];
+  allPets["pets"].forEach((pet) => {
+    // console.log(pet.category);
+    if (pet.category == petName) {
+      currentSelectedPets.push(pet);
+    }
+  });
+  console.log(currentSelectedPets);
+  if (currentSelectedPets.length) {
+    showPetsInHTML(currentSelectedPets);
+  } else {
+    showMessage();
+  }
+}
+
+function showMessage() {
+  const petsContainer = document.getElementById("pets-container");
+  petsContainer.innerHTML = "";
+  const div = document.createElement("div");
+  div.className =
+    "md:col-span-2 xl:col-span-3 py-32 flex flex-col justify-center items-center space-y-4 text-center rounded-lg bg-slate-100";
+  div.innerHTML = `
+
+    <img src="images/error.webp" alt="" />
+    <h2 class="text-2xl lg:text-3xl font-bold">
+      No Information Available
+    </h2>
+    <p class="max-w-[800px]">
+      It is a long established fact that a reader will be
+      distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a.
+    </p>
+ 
+  `;
+  petsContainer.appendChild(div);
 }
 getCatergory();
 
@@ -58,11 +101,11 @@ async function getAllPets() {
     "https://openapi.programming-hero.com/api/peddy/pets"
   );
   const pets = await res.json();
-  showPetsInHTML(pets);
+  allPets = pets;
+  showPetsInHTML(pets.pets);
 }
 function showPetsInHTML(pets) {
-  const petsList = pets.pets;
-
+  const petsList = pets;
   const petsContainer = document.getElementById("pets-container");
   petsContainer.innerHTML = "";
   for (const pet of petsList) {
@@ -72,7 +115,6 @@ function showPetsInHTML(pets) {
     div.innerHTML = createPetCard(pet);
     petsContainer.appendChild(div);
   }
-  console.log(petsList[0]);
 }
 
 function createPetCard(pet) {
@@ -127,4 +169,6 @@ function createPetCard(pet) {
     </div>
 `;
 }
+
+function sortingByPrice() {}
 getAllPets();
