@@ -2,7 +2,7 @@
 //task 02: show all pets in html by default
 
 let allPets = [];
-
+let currentPets = [];
 //task 01
 async function getCatergory() {
   const res = await fetch(
@@ -62,6 +62,7 @@ function showCurrentSelectedPets(petName) {
     // console.log(pet.category);
     if (pet.category == petName) {
       currentSelectedPets.push(pet);
+      currentPets.push(pet);
     }
   });
   console.log(currentSelectedPets);
@@ -138,7 +139,9 @@ function createPetCard(pet) {
         </div>
         <div class="flex items-center gap-2">
           <img src="images/calender.png" alt="" />
-          <p class="text-gray-500 font-semibold">Birth: ${pet.date_of_birth} </p>
+          <p class="text-gray-500 font-semibold">Birth: ${
+            pet.date_of_birth
+          } </p>
         </div>
         <div class="flex items-center gap-2">
           <img src="images/gender.png" alt="" />
@@ -148,7 +151,9 @@ function createPetCard(pet) {
         </div>
         <div class="flex items-center gap-2">
           <img src="images/price.png" alt="" />
-          <p class="text-gray-500 font-semibold">Price: ${pet.price}$ </p>
+          <p class=" text-gray-500 font-semibold">Price: <span class="price">${
+            pet.price ? pet.price : 100
+          }</span>$ </p>
         </div>
       </div>
       <!-- buttons -->
@@ -170,5 +175,17 @@ function createPetCard(pet) {
 `;
 }
 
-function sortingByPrice() {}
 getAllPets();
+
+// task 04 sorting kora
+function sortingByPrice() {
+  const petPrices = document.querySelectorAll(".price");
+  for (const price of petPrices) {
+    console.log(price.innerText);
+  }
+  console.log(allPets);
+}
+const sortBtn = document.getElementById("sort-btn");
+sortBtn.addEventListener("click", () => {
+  sortingByPrice();
+});
