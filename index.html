@@ -25,60 +25,308 @@
     </style>
   </head>
   <body class="font-latoFont">
-    <!-- container -->
-    <div class="max-w-[1500px] mx-auto">
-      <!-- header section  -->
-      <header>
-        <div class="navbar shadow-sm">
-          <!-- logo -->
-          <div class="navbar-start">
-            <div class="dropdown">
-              <img src="images/logo.webp" alt="" />
+    <!-- wrapper -->
+    <div>
+      <!-- container -->
+      <div class="max-w-[1500px] mx-auto">
+        <!-- header section  -->
+        <header>
+          <div class="navbar shadow-sm">
+            <!-- logo -->
+            <div class="navbar-start">
+              <div class="dropdown">
+                <img src="images/logo.webp" alt="" />
+              </div>
+              <a class="btn btn-ghost text-xl">Peddy</a>
             </div>
-            <a class="btn btn-ghost text-xl">Peddy</a>
+            <!-- center nav item -->
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li><a class="text-lg font-semibold text-gray-600">Home</a></li>
+                <li><a class="text-lg font-semibold text-gray-600">Shop</a></li>
+                <li>
+                  <a class="text-lg font-semibold text-gray-600">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <!-- user icon -->
+            <div class="navbar-end">
+              <img class="cursor-pointer" src="images/user.png" alt="" />
+            </div>
           </div>
-          <!-- center nav item -->
-          <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <li><a class="text-lg font-semibold text-gray-600">Home</a></li>
-              <li><a class="text-lg font-semibold text-gray-600">Shop</a></li>
-              <li>
-                <a class="text-lg font-semibold text-gray-600">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <!-- user icon -->
-          <div class="navbar-end">
-            <img class="cursor-pointer" src="images/user.png" alt="" />
-          </div>
-        </div>
-      </header>
+        </header>
 
-      <main>
-        <!-- banner section -->
-        <section
-          class="text-center space-y-5 my-10 max-w-screen-md mx-auto px-2"
-        >
-          <p class="font-semibold text-sm md:text-lg text-gray-500">
-            Bringing Families Together ❤️‍🔥
-          </p>
-          <h1 class="font-semibold text-3xl lg:text-7xl">
-            Your Path to Adoption Starts Here
-          </h1>
-          <p class="font-semibold text-sm md:text text-gray-800">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a.
-          </p>
-          <div>
-            <button
-              class="btn font-semibold text-lg text-white bg-teal-800 px-4 py-2 rounded-md cursor-pointer"
-            >
-              View More
-            </button>
-          </div>
-        </section>
-      </main>
+        <main>
+          <!-- banner section -->
+          <section
+            class="text-center space-y-5 my-10 max-w-screen-md mx-auto px-2"
+          >
+            <p class="font-semibold text-sm md:text-lg text-gray-500">
+              Bringing Families Together ❤️‍🔥
+            </p>
+            <h1 class="font-semibold text-3xl md:text-6xl lg:text-7xl my-8">
+              Your Path to Adoption Starts Here
+            </h1>
+            <p class="font-bold text-sm md:text text-gray-800">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+            <div>
+              <button
+                class="btn font-semibold text-lg text-white bg-teal-700 px-4 py-2 rounded-md cursor-pointer"
+              >
+                View More
+              </button>
+            </div>
+            <!-- banner image -->
+            <div>
+              <img src="images/pet.webp" alt="" />
+            </div>
+          </section>
+
+          <!-- best friend section -->
+          <section class="space-y-12">
+            <!-- description -->
+            <div class="space-y-4 text-center max-w-[600px] mx-auto">
+              <h2 class="text-2xl md:text-5xl font-bold">
+                Adopt Your Best Friend
+              </h2>
+              <p class="text-gray-700 font-medium">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a.
+              </p>
+            </div>
+
+            <!-- category -->
+            <div class="px-2 grid gap-2 sm:gap-5 grid-cols-2 md:grid-cols-4">
+              <!-- category 01 -->
+              <div
+                class="flex justify-center items-center px-5 py-4 rounded-md border-2 border-gray-200"
+              >
+                <img src="images/shiba.png" alt="" />
+                <span class="font-extrabold text-gray-700 text-lg ml-3"
+                  >Dogs</span
+                >
+              </div>
+              <!-- category 02 -->
+              <div
+                class="flex justify-center items-center px-5 py-4 rounded-md border-2 border-gray-200"
+              >
+                <img src="images/cat.png" alt="" />
+                <span class="font-extrabold text-gray-700 text-lg ml-3"
+                  >Cats</span
+                >
+              </div>
+              <!-- category 03 -->
+              <div
+                class="flex justify-center items-center px-5 py-4 rounded-md border-2 border-gray-200"
+              >
+                <img src="images/rabbit.png" alt="" />
+                <span class="font-extrabold text-gray-700 text-lg ml-3"
+                  >Rabbits</span
+                >
+              </div>
+              <!-- category 04 -->
+              <div
+                class="flex justify-center items-center px-5 py-4 rounded-md border-2 border-gray-200"
+              >
+                <img src="images/parrot.png" alt="" />
+                <span class="font-extrabold text-gray-700 text-lg ml-3"
+                  >Birds</span
+                >
+              </div>
+            </div>
+
+            <!-- sorting -->
+            <div class="px-2 flex justify-between items-center">
+              <h2 class="text-xl font-bold">Best Deal For you</h2>
+              <div>
+                <button
+                  class="font-medium text text-white bg-teal-700 px-5 py-2 rounded-lg cursor-pointer"
+                >
+                  Sort by Price
+                </button>
+              </div>
+            </div>
+
+            <!--  container -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-5">
+              <!-- all friends container -->
+              <div
+                class="col-span-5 xl:col-span-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
+              >
+                <!-- card 01 -->
+                <div
+                  class="card border-2 border-gray-200 bg-base-100 max-w-96 mx-auto lg:w-96 p-6 shadow-sm"
+                >
+                  <figure class="">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                      alt="Shoes"
+                      class="rounded-xl"
+                    />
+                  </figure>
+                  <!-- card body -->
+                  <div class="card-body p-0">
+                    <div class="py-6 space-y-1 border-b-2 border-gray-300">
+                      <h2 class="text-2xl font-extrabold">Mister Tartos</h2>
+                      <div class="flex items-center gap-2">
+                        <img src="images/breed.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Breed: Golder retriever
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/calender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Birth: 2024</p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/gender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Gender: Female
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/price.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Price: 199$</p>
+                      </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="card-actions py-3 justify-between">
+                      <img src="images/like.png" alt="" />
+
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Adopt
+                      </button>
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- card 02-->
+                <div
+                  class="card border-2 border-gray-200 bg-base-100 max-w-96 mx-auto lg:w-96 p-6 shadow-sm"
+                >
+                  <figure class="">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                      alt="Shoes"
+                      class="rounded-xl"
+                    />
+                  </figure>
+                  <!-- card body -->
+                  <div class="card-body p-0">
+                    <div class="py-6 space-y-1 border-b-2 border-gray-300">
+                      <h2 class="text-2xl font-extrabold">Mister Tartos</h2>
+                      <div class="flex items-center gap-2">
+                        <img src="images/breed.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Breed: Golder retriever
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/calender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Birth: 2024</p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/gender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Gender: Female
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/price.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Price: 199$</p>
+                      </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="card-actions py-3 justify-between">
+                      <img src="images/like.png" alt="" />
+
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Adopt
+                      </button>
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- card 03-->
+                <div
+                  class="card border-2 border-gray-200 bg-base-100 max-w-96 mx-auto lg:w-96 p-6 shadow-sm"
+                >
+                  <figure class="">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                      alt="Shoes"
+                      class="rounded-xl"
+                    />
+                  </figure>
+                  <!-- card body -->
+                  <div class="card-body p-0">
+                    <div class="py-6 space-y-1 border-b-2 border-gray-300">
+                      <h2 class="text-2xl font-extrabold">Mister Tartos</h2>
+                      <div class="flex items-center gap-2">
+                        <img src="images/breed.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Breed: Golder retriever
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/calender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Birth: 2024</p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/gender.png" alt="" />
+                        <p class="text-gray-500 font-semibold">
+                          Gender: Female
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <img src="images/price.png" alt="" />
+                        <p class="text-gray-500 font-semibold">Price: 199$</p>
+                      </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="card-actions py-3 justify-between">
+                      <img src="images/like.png" alt="" />
+
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Adopt
+                      </button>
+                      <button
+                        class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- fav thumbnail container  -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+    
     </div>
   </body>
 </html>
