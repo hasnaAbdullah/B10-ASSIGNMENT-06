@@ -40,16 +40,21 @@ function selectCatergory(categoryContainer) {
       for (const category of categoryContainer.children) {
         category.children[0].classList.remove("border-teal-600");
         category.children[0].classList.remove("bg-teal-100");
+        category.children[0].removeAttribute("id");
       }
       if (event.target.tagName === "DIV") {
         event.target.classList.add("border-teal-600");
         event.target.classList.add("bg-teal-100");
+        event.target.id = "selected";
+        console.log(event.target.id);
         showCurrentSelectedPets(event.target.innerText);
         // console.log(event.target.innerText);
       } else {
         const parentElm = event.target.parentElement;
         parentElm.classList.add("border-teal-600");
         parentElm.classList.add("bg-teal-100");
+        parentElm.id = "selected";
+        console.log(parentElm.id);
         // console.log(parentElm.innerText);
         showCurrentSelectedPets(parentElm.innerText);
       }
@@ -105,7 +110,7 @@ async function getAllPets() {
   allPets = pets;
   showPetsInHTML(pets.pets);
 }
-function showPetsInHTML(pets) {
+function showPetsInHTML(pets, petName) {
   const petsList = pets;
   const petsContainer = document.getElementById("pets-container");
   petsContainer.innerHTML = "";
@@ -179,11 +184,32 @@ getAllPets();
 
 // task 04 sorting kora
 function sortingByPrice() {
-  const petPrices = document.querySelectorAll(".price");
-  for (const price of petPrices) {
-    console.log(price.innerText);
+  const petsContainer = document.getElementById("pets-container");
+  const pets = allPets.pets;
+  const selectedPetsElm = document.getElementById("selected")
+    ? document.getElementById("selected")
+    : "";
+  const selectedPetCards = [];
+  console.log(pets[0]);
+  pets.forEach((pet) => {
+    if (selectedPetsElm) {
+      if (selectedPetsElm.innerText === pet.category) {
+        selectedPetCards.push(pet);
+      }
+    }
+  });
+
+  if (selectedPetsElm) {
+    const descendedPets = selectedPetCards.sort((pet1, pet2) => {
+      return pet2.price - pet1.price;
+    });
+    showPetsInHTML(descendedPets);
+  } else {
+    const descendedPets = pets.sort((pet1, pet2) => {
+      return pet2.price - pet1.price;
+    });
+    showPetsInHTML(descendedPets);
   }
-  console.log(allPets);
 }
 const sortBtn = document.getElementById("sort-btn");
 sortBtn.addEventListener("click", () => {
