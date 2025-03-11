@@ -110,7 +110,7 @@ async function getAllPets() {
   allPets = pets;
   showPetsInHTML(pets.pets);
 }
-function showPetsInHTML(pets, petName) {
+function showPetsInHTML(pets) {
   const petsList = pets;
   const petsContainer = document.getElementById("pets-container");
   petsContainer.innerHTML = "";
@@ -199,11 +199,13 @@ function sortingByPrice() {
     }
   });
 
-  if (selectedPetsElm) {
+  if (selectedPetsElm && selectedPetCards.length) {
     const descendedPets = selectedPetCards.sort((pet1, pet2) => {
       return pet2.price - pet1.price;
     });
     showPetsInHTML(descendedPets);
+  } else if (selectedPetsElm && selectedPetCards.length === 0) {
+    showMessage();
   } else {
     const descendedPets = pets.sort((pet1, pet2) => {
       return pet2.price - pet1.price;
