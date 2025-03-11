@@ -126,7 +126,7 @@ function showPetsInHTML(pets) {
 function createPetCard(pet) {
   return `
   <figure class="">
-      <img
+      <img 
         src="${pet.image}"
         alt="Shoes"
         class="rounded-xl object-contain w-full h-52"
@@ -163,7 +163,7 @@ function createPetCard(pet) {
       </div>
       <!-- buttons -->
       <div class="card-actions py-3 justify-between">
-        <img  src="images/like.png" />
+        <img id="${pet.petId}" class="cursor-pointer"  src="images/like.png" />
         <button
           class="btn px-6 lg:px-7 lg:text-lg border-teal-600 text-teal-700"
         >
@@ -217,3 +217,26 @@ const sortBtn = document.getElementById("sort-btn");
 sortBtn.addEventListener("click", () => {
   sortingByPrice();
 });
+
+// task 05
+function addFavPetsInThumb() {
+  const petsContainer = document.getElementById("pets-container");
+  const thumbnailContainer = document.getElementById("thumbnail-container");
+  thumbnailContainer.innerHTML = "";
+  petsContainer.addEventListener("click", (event) => {
+    if (parseInt(event.target.id)) {
+      // console.log(event.target.id);
+      const div = document.createElement("div");
+      const petImageUrl =
+        event.target.parentElement.parentElement.previousElementSibling
+          .children[0].src;
+      console.log(petImageUrl);
+      div.innerHTML = `
+      <img class="items-start rounded-lg" src="${petImageUrl}" alt="" />
+      `;
+      console.log(div);
+      thumbnailContainer.appendChild(div);
+    }
+  });
+}
+addFavPetsInThumb();
